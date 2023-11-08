@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "terraform-s3-remote-state-steffen"
+    bucket         = "steffen-terraform-s3-remote-state"
     key            = "global/backend/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-locking"
