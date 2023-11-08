@@ -13,6 +13,7 @@ module "aws-vpc" {
   }
   private_subnets    = ["192.168.3.0/24", "192.168.4.0/24"]
   enable_nat_gateway = true
+  single_nat_gateway = true 
 }
 
 module "application" {
