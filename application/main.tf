@@ -36,7 +36,7 @@ resource "aws_db_instance" "database" {
 # AWS ECS Cluster
 resource "aws_ecs_cluster" "ecs_cluster" {
   name = "Terraform-ECS-Cluster"
-  [data.aws_vpc.aws-vpc]
+  depends_on = [data.aws_vpc.aws-vpc]
 }
 
 # AWS ECS Task Definition
