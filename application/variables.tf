@@ -75,19 +75,39 @@ locals {
       ],
       "environment": [
         {
-          "name": "POSTGRES_PASSWORD",
-          "value": "${local.rds_secret["password"]}"
+          "name": "MYSQL_MASTER_PASSWORD",
+          "value": "${local.rds_secret["MYSQL_MASTER_PASSWORD"]}"
         },
         {
-          "name": "POSTGRES_USER",
-          "value": "${local.rds_secret["username"]}"
+          "name": "MYSQL_MASTER_USER",
+          "value": "${local.rds_secret["MYSQL_MASTER_USER"]}"
         },
         {
-          "name": "POSTGRES_DB",
-          "value": "${local.rds_secret["dbname"]}"
+          "name": "MYSQL_DATABASE",
+          "value": "${local.rds_secret["MYSQL_DATABASE"]}"
         },
         {
-          "name": "DB_HOSTNAME",
+          "name": "SECRET_KEY",
+          "value": "${local.rds_secret["SECRET_KEY"]}"
+        },
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "value": "${local.rds_secret["AWS_ACCESS_KEY_ID"]}"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "value": "${local.rds_secret["AWS_SECRET_ACCESS_KEY"]}"
+        },
+        {
+          "name": "AWS_REGION_NAME",
+          "value": "${local.rds_secret["AWS_REGION_NAME"]}"
+        },
+        {
+          "name": "VERIFIED_SES_EMAIL",
+          "value": "${local.rds_secret["VERIFIED_SES_EMAIL"]}"
+        },
+        {
+          "name": "MYSQL_HOSTNAME",
           "value": "${aws_db_instance.database.address}"
         }
       ],

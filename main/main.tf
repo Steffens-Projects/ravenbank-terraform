@@ -16,11 +16,14 @@ module "aws-vpc" {
 }
 
 module "application" {
-  source          = "../application"                                                                 # This calls the module.
-  vpc_id          = module.aws-vpc.vpc_id                                                                 # This field requires a VPC to already be made. VPC made via the official VPC module above.
-  hosted_zone     = "steffenaws.net"                                                                      # This requires you to have a Route53 Hosted Zone.
-  certificate_arn = "arn:aws:acm:us-east-1:230371373527:certificate/2b2354bb-fe3f-415f-adb3-c163de7af49c" # This requires you to have a ACM certificate made that is associated with your goal record.
-  region          = "us-east-1"                                                                           # This is the region.
-  rds_snapshot    = "arn:aws:rds:us-east-1:060477591397:snapshot:terraform-rds-snapshot-new"              # Snapshot of the database you want used in your application.
-  rds_secret_name = "terraform/rds/secret"                                                                # This is the secrets where the database credentials are stored.
+  source          = "../application"                                                             
+  vpc_id          = module.aws-vpc.vpc_id                                                                 
+  hosted_zone     = "steffenaws.net"                                                                      
+  certificate_arn = "arn:aws:acm:us-east-1:230371373527:certificate/2b2354bb-fe3f-415f-adb3-c163de7af49c" 
+  region          = "us-east-1"                                                                           
+  rds_snapshot    = "arn:aws:rds:us-east-1:060477591397:snapshot:terraform-rds-snapshot-new"              
+  rds_secret_name = "terraform/rds/secret"                                                                
 }
+
+
+# CREATE NEW RDS SNAPSHOT, CHATGPT HAS INFO
