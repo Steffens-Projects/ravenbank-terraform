@@ -163,3 +163,7 @@ resource "aws_route53_record" "route53_record" {
     evaluate_target_health = false
   }
 }
+
+resource "aws_cloudwatch_log_group" "ecs_logs" {
+  name = "/ecs/terraform-ecs-logs"
+}
