@@ -21,7 +21,7 @@ module "application" {
   hosted_zone     = "steffenaws.net"                                                                      
   certificate_arn = "arn:aws:acm:us-east-1:230371373527:certificate/2b2354bb-fe3f-415f-adb3-c163de7af49c" 
   region          = "us-east-1"                                                                           
-  rds_snapshot    = "arn:aws:rds:us-east-1:060477591397:snapshot:terraform-rds-snapshot-new"              
+  rds_snapshot    = "arn:aws:rds:us-east-1:230371373527:snapshot:ravenbank-database-snapshot"              
   rds_secret_name = "terraform/rds/secret"                                                                
 }
 

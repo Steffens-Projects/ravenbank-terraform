@@ -2,3 +2,4 @@
 Root Module/.terraform/
 2 Tier Application/.terraform/
 .terraform/
+.terraform.lock.hcl
