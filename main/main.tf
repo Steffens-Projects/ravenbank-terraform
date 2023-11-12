@@ -25,6 +25,3 @@ module "application" {
   rds_snapshot    = "arn:aws:rds:us-east-1:230371373527:snapshot:ravenbank-database-snapshot"              
   rds_secret_name = "terraform/rds/secret"                                                                
 }
-
-
-# CREATE NEW RDS SNAPSHOT, CHATGPT HAS INFO
